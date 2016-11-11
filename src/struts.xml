@@ -1,0 +1,11 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<package name="Emp" extends="struts-default" namespace="/emp">
+    <action name="empAction" class="empAction" method="execute">
+        <result name="success" type="dispatcher">/success.jsp</result>
+        <result name="error" type="redirect">/error.jsp</result>
+    </action>
+</package>
+</struts>

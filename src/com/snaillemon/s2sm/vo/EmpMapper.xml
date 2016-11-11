@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.snaillemon.s2sm.vo.EmpMapper">
+
+    <resultMap id="EmpEntity" type="emp">
+        <!--映射主键-->
+        <id property="id" column="id"/>
+        <!--映射非主键-->
+        <result property="eName" column="ename"/>
+        <result property="did" column="did"/>
+    </resultMap>
+
+    <!--插入对象到数据库-->
+    <insert id="insertOne" parameterType="emp">
+        INSERT INTO emp(id,ename,did) VALUES (#{id},#{eName},#{did})
+    </insert>
+
+    <!--根据ID查询对象-->
+    <select id="selectOne" parameterType="int" resultType="emp">
+        SELECT * FROM emp WHERE id=#{id}
+    </select>
+</mapper>
